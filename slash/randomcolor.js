@@ -4,7 +4,7 @@ module.exports = {
   name: "randomcolor",
   description: "Sends a random color's hex code",
   run: async (client, interaction) => {
-    var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
     const hexembed = new MessageEmbed()
       .setColor(`#${randomColor}`)
       .setTitle("Here's a random color")

@@ -4,7 +4,7 @@ module.exports = {
   name: "ping",
   description: "🏓Check my ping!",
   run: async (client, interaction) => {
-    let pembed = new MessageEmbed()
+    const pembed = new MessageEmbed()
       .setColor("RANDOM")
       .setTitle("Client Ping")
       .addField(

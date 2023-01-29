@@ -7,20 +7,20 @@ module.exports = {
   name: "stats",
   description: "📊 Sends bot physical statistics",
   run: async (client, interaction) => {
-    let uptime = client.uptime;
-    let shortUptime = feroms.ms(uptime);
-    let model = os.cpus()[0].model;
-    let cores = os.cpus().length;
-    let platform = os.platform();
-    let nodejs = process.version;
-    let djs = require("discord.js").version;
-    let botversion = require("../package.json").version;
-    let server = client.guilds.cache.size;
-    let user =
+    const uptime = client.uptime;
+    const shortUptime = feroms.ms(uptime);
+    const model = os.cpus()[0].model;
+    const cores = os.cpus().length;
+    const platform = os.platform();
+    const nodejs = process.version;
+    const djs = require("discord.js").version;
+    const botversion = require("../package.json").version;
+    const server = client.guilds.cache.size;
+    const user =
       client.guilds.cache.reduce((a, g) => a + g.memberCount, 0) -
       client.guilds.cache.size;
-    let channel = client.channels.cache.size;
-    let developer = require("../package.json").author;
+    const channel = client.channels.cache.size;
+    const developer = require("../package.json").author;
     let dbStatus;
     if (mongoose.connection.readyState === 1) {
       dbStatus = "MongoDB: Connected";
@@ -28,7 +28,7 @@ module.exports = {
       dbStatus = "MongoDB: Not Connected";
     }
 
-    let statsembed = new MessageEmbed()
+    const statsembed = new MessageEmbed()
       .addFields(
         {
           name: "I have been online for?",
