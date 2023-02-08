@@ -12,7 +12,7 @@ module.exports = {
       .setTitle(`Commands of ${client.user.username}`)
       .setColor("RANDOM")
       .setDescription(
-        "**Please Select a category to view all its commands**\nCurrently 19 commands are registered to the bot!"
+        "**Please Select a category to view all its commands**\nCurrently 20 commands are registered to the bot!"
       )
       .setThumbnail(client.user.displayAvatarURL())
       .setTimestamp()
@@ -28,52 +28,52 @@ module.exports = {
       .addFields(
         {
           name: "__Create__",
-          value: `Start a giveaway in your server!\n > **How?: \`/create\`**`,
+          value: `Start a giveaway in your server!\n > **Command: \`/create\`**`,
           inline: true,
         },
         {
           name: "__Drop__",
-          value: `Create a drop giveaway!\n > **How?: \`/drop\`**`,
+          value: `Create a drop giveaway!\n > **Command: \`/drop\`**`,
           inline: true,
         },
         {
           name: "__Edit__",
-          value: `Edit an already running giveaway!\n > **How?: \`/edit\`**`,
+          value: `Edit an already running giveaway!\n > **Command: \`/edit\`**`,
           inline: true,
         },
         {
           name: "__End__",
-          value: `End an already running giveaway!\n > **How?: \`/end\`**`,
+          value: `End an already running giveaway!\n > **Command: \`/end\`**`,
           inline: true,
         },
         {
           name: "__List__",
-          value: `List all the giveaways running within this server!\n > **How?: \`/list\`**`,
+          value: `List all the giveaways running within this server!\n > **Command: \`/list\`**`,
           inline: true,
         },
         {
           name: "__Pause__",
-          value: `Pause an already running giveaway!\n > **How?: \`/pause\`**`,
+          value: `Pause an already running giveaway!\n > **Command: \`/pause\`**`,
           inline: true,
         },
         {
           name: "__Reroll__",
-          value: `Reroll an ended giveaway!\n > **How?: \`/reroll\`**`,
+          value: `Reroll an ended giveaway!\n > **Command: \`/reroll\`**`,
           inline: true,
         },
         {
           name: "__Resume__",
-          value: `Resume a paused giveaway!\n > **How?: \`/resume\`**`,
+          value: `Resume a paused giveaway!\n > **Command: \`/resume\`**`,
           inline: true,
         },
         {
           name: "__Delete__",
-          value: `Delete a ended giveaway!\n > **How?: \`/delete\`**`,
+          value: `Delete a ended giveaway!\n > **Command: \`/delete\`**`,
           inline: true,
         },
         {
           name: "__Log__",
-          value: `Create a log channel for giveaway-logs!\n > **How?: \`/log\`**`,
+          value: `Create a log channel for giveaway-logs!\n > **Command: \`/log\`**`,
         }
       )
       .setTimestamp()
@@ -89,37 +89,37 @@ module.exports = {
       .addFields(
         {
           name: "__Help__",
-          value: `Shows all available commands to this bot!\n > **How?: \`/help\`**`,
+          value: `Shows all available commands to this bot!\n > **Command: \`/help\`**`,
           inline: true,
         },
         {
           name: "__Invite__",
-          value: `Get the bot's invite link!\n > **How?: \`/invite\`**`,
+          value: `Get the bot's invite link!\n > **Command: \`/invite\`**`,
           inline: true,
         },
         {
           name: "__Ping__",
-          value: `Check the bot's websocket latency!\n > **How?: \`/ping\`**`,
+          value: `Check the bot's websocket latency!\n > **Command: \`/ping\`**`,
           inline: true,
         },
         {
           name: "__Vote__",
-          value: `Vote for the bot!\n > **How?: \`/vote\`**`,
+          value: `Vote for the bot!\n > **Command: \`/vote\`**`,
           inline: true,
         },
         {
           name: "__Feedback__",
-          value: `Send live feedback about the bot to the developer!\n > **How?: \`/feedback\`**`,
+          value: `Send live feedback about the bot to the developer!\n > **Command: \`/feedback\`**`,
           inline: true,
         },
         {
           name: "__Status__",
-          value: `Check the bot's status!\n > **How?: \`/status\`**`,
+          value: `Check the bot's status!\n > **Command: \`/status\`**`,
           inline: true,
         },
         {
           name: "__Stats__",
-          value: `Check the bot's physical statistics!\n > **How?: \`/stats\`**`,
+          value: `Check the bot's physical statistics!\n > **Command: \`/stats\`**`,
           inline: true,
         }
       )
@@ -136,12 +136,17 @@ module.exports = {
       .addFields(
         {
           name: "__Rps__",
-          value: `Play rock paper scissors with the bot!\n > **How?: \`/rps\`**`,
+          value: `Play rock paper scissors with the bot!\n > **Command: \`/rps\`**`,
           inline: true,
         },
         {
           name: "__Randomcolor__",
-          value: `Get a random color with its hex code!\n > **How?: \`/randomcolor\`**`,
+          value: `Get a random color with its hex code!\n > **Command: \`/randomcolor\`**`,
+          inline: true,
+        },
+        {
+          name: "__Akinator__",
+          value: `Play a game with akinator!\n > **Command: \`/akinator\`**`,
           inline: true,
         }
       )
