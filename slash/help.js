@@ -12,7 +12,7 @@ module.exports = {
       .setTitle(`Commands of ${client.user.username}`)
       .setColor("RANDOM")
       .setDescription(
-        "**Please Select a category to view all its commands**\nCurrently 20 commands are registered to the bot!"
+        "**Please Select a category to view all its commands**\nCurrently 18 commands are registered to the bot!"
       )
       .setThumbnail(client.user.displayAvatarURL())
       .setTimestamp()
@@ -133,23 +133,11 @@ module.exports = {
       .setTitle("Categories » Fun")
       .setColor("RANDOM")
       .setDescription("```yaml\nHere are the fun based commands:```")
-      .addFields(
-        {
-          name: "__Rps__",
-          value: `Play rock paper scissors with the bot!\n > **Command: \`/rps\`**`,
-          inline: true,
-        },
-        {
-          name: "__Randomcolor__",
-          value: `Get a random color with its hex code!\n > **Command: \`/randomcolor\`**`,
-          inline: true,
-        },
-        {
-          name: "__Akinator__",
-          value: `Play a game with akinator!\n > **Command: \`/akinator\`**`,
-          inline: true,
-        }
-      )
+      .addFields({
+        name: "__Games__",
+        value: `Play games with the bot!\n > **Command: \`/games\`**`,
+        inline: true,
+      })
       .setTimestamp()
       .setFooter({
         text: `Requested by ${interaction.user.username} | GiveawaySforLife`,

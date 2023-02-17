@@ -5,12 +5,12 @@ module.exports = {
   description: "Play rock paper scissors with the bot",
 
   run: async (client, interaction) => {
-    let hand = [
+    const hand = [
       { txt: "Rock", emoji: "✊", index: 0 },
       { txt: "Paper", emoji: "🤚", index: 1 },
       { txt: "Scissors", emoji: "✌️", index: 2 },
     ];
-    let botMove = hand[Math.floor(Math.random() * 3)];
+    const botMove = hand[Math.floor(Math.random() * 3)];
 
     await interaction.reply({
       embeds: [
@@ -44,8 +44,8 @@ module.exports = {
     let win = 0;
     let userMove;
 
-    let f = async (interaction2) => {
-      let rpsMsg = interaction2.message;
+    const f = async (interaction2) => {
+      const rpsMsg = interaction2.message;
       if (!interaction2.isButton()) return;
       if (interaction2.customId.startsWith("rps")) {
         await interaction2.deferUpdate();
@@ -63,7 +63,7 @@ module.exports = {
             break;
         }
 
-        let embed = rpsMsg.embeds[0];
+        const embed = rpsMsg.embeds[0];
 
         embed.description = `I chose ${botMove.txt}! ${
           win == 0 ? "You lost!" : win == 1 ? "We tied!" : "You win!"
@@ -71,7 +71,7 @@ module.exports = {
           botMove.emoji
         })`;
 
-        let components = rpsMsg.components;
+        const components = rpsMsg.components;
 
         components[0].components.forEach((comp) => {
           if (comp.customId == interaction2.customId) {
