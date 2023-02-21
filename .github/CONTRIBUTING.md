@@ -22,9 +22,9 @@ submit a pull request.
 
 There are a number of guidelines considered when reviewing Pull Requests to be merged. _This is by no means an exhaustive list, but here are some things to consider before/while submitting your ideas._
 
--   Everything in this project should be generally useful for the majority of users. Don't let that stop you if you've got a good concept though, as your idea still might be a great addition.
+- Everything in this project should be generally useful for the majority of users. Don't let that stop you if you've got a good concept though, as your idea still might be a great addition.
 
--   Everything should follow [OOP paradigms][oop paradigms] and generally rely on behaviour over state where possible. This generally helps methods be predictable, keeps the codebase simple and understandable, reduces code duplication through abstraction, and leads to efficiency and therefore scalability.
+- Everything should follow [OOP paradigms][oop paradigms] and generally rely on behaviour over state where possible. This generally helps methods be predictable, keeps the codebase simple and understandable, reduces code duplication through abstraction, and leads to efficiency and therefore scalability.
 
 <!-- Link Dump -->
 
@@ -33,6 +33,7 @@ There are a number of guidelines considered when reviewing Pull Requests to be m
 [vscode]: https://code.visualstudio.com
 
 <!-- Code -->
+
 [commit convention]: https://www.conventionalcommits.org/en/v1.0.0/
 [node.js]: https://nodejs.org/en/download/
 [here]: https://github.com/Aim2339/GiveawayS/pulls
