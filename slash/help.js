@@ -184,7 +184,7 @@ module.exports = {
     const collector = interaction.channel.createMessageComponentCollector({
       filter,
       componentType: "SELECT_MENU",
-      idle: 500000,
+      idle: 50000,
       dispose: true,
     });
 
