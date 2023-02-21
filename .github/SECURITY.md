@@ -1,0 +1,1 @@
+If you believe you have found a potential security vulnerability in this [repository](https://github.com/Aim2339/GiveawayS) please submit the vulnerability directly to me on [Discord](https://discord.com/users/756060979896385606) so that we can resolve the issue before it is disclosed publicly.
