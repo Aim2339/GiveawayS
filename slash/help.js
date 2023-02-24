@@ -113,8 +113,8 @@ module.exports = {
           inline: true,
         },
         {
-          name: "__Status__",
-          value: `Check the bot's status!\n > **Command: \`/status\`**`,
+          name: "__Links__",
+          value: `Get a list of links related to the bot!\n > **Command: \`/links\`**`,
           inline: true,
         },
         {
@@ -184,7 +184,7 @@ module.exports = {
     const collector = interaction.channel.createMessageComponentCollector({
       filter,
       componentType: "SELECT_MENU",
-      idle: 500000,
+      idle: 50000,
       dispose: true,
     });
 
