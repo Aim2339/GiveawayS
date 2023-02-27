@@ -1,4 +1,6 @@
 {
+  "TOKEN": "BOT_TOKEN_HERE",
+  "MONGO_URL": "MONGO_URL_HERE",
   "everyoneMention": false,
   "hostedBy": true,
   "maintenanceMode": false

@@ -8,7 +8,7 @@ client.config = config;
 
 // Connect to the database
 const mongoose = require("mongoose");
-mongoose.connect(`${process.env.MONGO_URL}`);
+mongoose.connect(`${config.MONGO_URL}`);
 const db = mongoose.connection;
 
 // Check the connection
@@ -117,19 +117,4 @@ fs.readdir("./slash/", (_err, files) => {
   });
 });
 
-const http = require("http");
-http
-  .createServer(function (req, res) {
-    res.write("Bot is online!");
-    res.end();
-  })
-  .listen(8080);
-let started = false;
-
-client.once("ready", () => (started = true));
-const { spawn } = require("child_process");
-setTimeout(() => {
-  if (!started) spawn("kill", ["1"]);
-}, 15000);
-
-client.login(process.env.TOKEN);
+client.login(config.TOKEN);
