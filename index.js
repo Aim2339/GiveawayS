@@ -8,6 +8,7 @@ client.config = config;
 
 // Connect to the database
 const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
 mongoose.connect(`${config.MONGO_URL}`);
 const db = mongoose.connection;
 
