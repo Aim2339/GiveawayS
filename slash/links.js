@@ -2,7 +2,8 @@ const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
 
 module.exports = {
   name: "links",
-  description: "Get a list of links related to the bot",
+  description: "🔗 Get a list of links related to the bot",
+
   run: async (client, interaction) => {
     const row = new MessageActionRow().addComponents(
       new MessageButton()

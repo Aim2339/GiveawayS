@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 
 module.exports = {
   name: "list",
-  description: "🎉 List all the active giveaways for this server.",
+  description: "🏃 List all the active giveaways for this server.",
+
   run: async (client, interaction) => {
     const select = new Discord.MessageSelectMenu()
       .setCustomId("select")
@@ -34,7 +35,7 @@ module.exports = {
       .setTitle("Currently Active Giveaways")
       .setColor("RANDOM")
       .setFooter({
-        text: `Requested by ${interaction.user.username} | GiveawaySforLife`,
+        text: `Requested by ${interaction.user.username} | GiveawayS`,
         iconURL: interaction.user.displayAvatarURL(),
       })
       .setTimestamp();

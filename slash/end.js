@@ -1,6 +1,6 @@
 module.exports = {
   name: "end",
-  description: "🎉 End an already running giveaway",
+  description: "🔚 End an already running giveaway",
 
   options: [
     {

@@ -3,12 +3,12 @@ const messages = require("../utils/message");
 
 module.exports = {
   name: "delete",
-  description: " Delete a giveaway",
+  description: "🗑️ Delete a giveaway",
 
   options: [
     {
       name: "giveaway",
-      description: "🗑 The giveaway to delete (message ID or giveaway prize)",
+      description: "The giveaway to delete (message ID or giveaway prize)",
       type: "STRING",
       required: true,
     },

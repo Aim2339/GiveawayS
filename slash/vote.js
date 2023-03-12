@@ -3,6 +3,7 @@ const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
 module.exports = {
   name: "vote",
   description: "➕ Vote for the bot!",
+
   run: async (client, interaction) => {
     const row = new MessageActionRow().addComponents(
       new MessageButton()
@@ -19,7 +20,7 @@ module.exports = {
       .setColor("RANDOM")
       .setTimestamp()
       .setFooter({
-        text: `Requested by ${interaction.user.username} | GiveawaySforLife`,
+        text: `Requested by ${interaction.user.username} | GiveawayS`,
         iconURL: interaction.user.displayAvatarURL(),
       });
     interaction.reply({ embeds: [invite], components: [row] });

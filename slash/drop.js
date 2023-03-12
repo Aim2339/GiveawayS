@@ -4,7 +4,7 @@ const messages = require("../utils/message");
 const ms = require("ms");
 module.exports = {
   name: "drop",
-  description: "🎉 Create a drop giveaway",
+  description: "🎁 Create a drop giveaway",
 
   options: [
     {

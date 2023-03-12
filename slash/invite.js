@@ -3,6 +3,7 @@ const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
 module.exports = {
   name: "invite",
   description: "➕ Invite the bot to your server!",
+
   run: async (client, interaction) => {
     const row = new MessageActionRow().addComponents(
       new MessageButton()
@@ -25,7 +26,7 @@ module.exports = {
       .setColor("RANDOM")
       .setTimestamp()
       .setFooter({
-        text: `Requested by ${interaction.user.username} | GiveawaySforLife`,
+        text: `Requested by ${interaction.user.username} | GiveawayS`,
         iconURL: interaction.user.displayAvatarURL(),
       });
     interaction.reply({ embeds: [invite], components: [row] });

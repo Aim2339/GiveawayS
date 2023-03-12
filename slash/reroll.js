@@ -1,6 +1,6 @@
 module.exports = {
   name: "reroll",
-  description: "🎉 Reroll a giveaway",
+  description: "🎲 Reroll a giveaway",
 
   options: [
     {

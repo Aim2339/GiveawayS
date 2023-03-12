@@ -7,6 +7,7 @@ const {
 module.exports = {
   name: "help",
   description: "📜 View all the commands available to the bot!",
+
   run: async (client, interaction) => {
     const embed = new MessageEmbed()
       .setTitle(`Commands of ${client.user.username}`)
@@ -17,7 +18,7 @@ module.exports = {
       .setThumbnail(client.user.displayAvatarURL())
       .setTimestamp()
       .setFooter({
-        text: `Requested by ${interaction.user.username} | GiveawaySforLife`,
+        text: `Requested by ${interaction.user.username} | GiveawayS`,
         iconURL: interaction.user.displayAvatarURL(),
       });
 
@@ -78,7 +79,7 @@ module.exports = {
       )
       .setTimestamp()
       .setFooter({
-        text: `Requested by ${interaction.user.username} | GiveawaySforLife`,
+        text: `Requested by ${interaction.user.username} | GiveawayS`,
         iconURL: interaction.user.displayAvatarURL(),
       });
 
@@ -125,7 +126,7 @@ module.exports = {
       )
       .setTimestamp()
       .setFooter({
-        text: `Requested by ${interaction.user.username} | GiveawaySforLife`,
+        text: `Requested by ${interaction.user.username} | GiveawayS`,
         iconURL: interaction.user.displayAvatarURL(),
       });
 
@@ -140,7 +141,7 @@ module.exports = {
       })
       .setTimestamp()
       .setFooter({
-        text: `Requested by ${interaction.user.username} | GiveawaySforLife`,
+        text: `Requested by ${interaction.user.username} | GiveawayS`,
         iconURL: interaction.user.displayAvatarURL(),
       });
 

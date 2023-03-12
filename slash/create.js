@@ -210,7 +210,7 @@ module.exports = {
         value: `>>> ${giveawayNote}`,
       })
       .setFooter({
-        text: `Note from ${interaction.user.username} | GiveawaysforLife`,
+        text: `Note from ${interaction.user.username} | GiveawayS`,
         iconURL: interaction.user.displayAvatarURL(),
       });
 

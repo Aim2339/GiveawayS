@@ -2,7 +2,8 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "games",
-  description: "Play games with the bot",
+  description: "🎮 Play games with the bot",
+
   options: [
     {
       name: "game",
@@ -17,6 +18,7 @@ module.exports = {
       ],
     },
   ],
+
   run: async (client, interaction) => {
     const game = interaction.options.getString("game");
 

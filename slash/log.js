@@ -2,7 +2,8 @@ const { MessageActionRow, MessageButton, MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "log",
-  description: "Set up a log channel",
+  description: "🪵 Set up a log channel",
+
   run: async (client, interaction) => {
     if (
       !interaction.member.permissions.has("MANAGE_MESSAGES") &&

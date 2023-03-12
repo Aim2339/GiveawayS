@@ -2,7 +2,7 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "feedback",
-  description: "Send me feedback (can include bugs/problems)",
+  description: "✍️ Send me feedback (can include bugs/problems)",
 
   options: [
     {
@@ -26,7 +26,7 @@ module.exports = {
       })
       .setTimestamp()
       .setFooter({
-        text: `Requested by ${interaction.user.username} | GiveawaySforLife`,
+        text: `Requested by ${interaction.user.username} | GiveawayS`,
         iconURL: interaction.user.displayAvatarURL(),
       });
     interaction.reply({ embeds: [fembed] });
@@ -59,7 +59,7 @@ module.exports = {
       )
       .setTimestamp()
       .setFooter({
-        text: `Requested by ${interaction.user.username} | GiveawaySforLife`,
+        text: `Requested by ${interaction.user.username} | GiveawayS`,
         iconURL: interaction.user.displayAvatarURL(),
       });
     channel.send({ embeds: [aembed] });

@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 module.exports = {
   name: "stats",
   description: "📊 Sends bot physical statistics",
+
   run: async (client, interaction) => {
     const uptime = client.uptime;
     const shortUptime = feroms.ms(uptime);
@@ -104,7 +105,7 @@ module.exports = {
       .setColor("RANDOM")
       .setTimestamp()
       .setFooter({
-        text: `Requested by ${interaction.user.username} | GiveawaySforLife`,
+        text: `Requested by ${interaction.user.username} | GiveawayS`,
         iconURL: interaction.user.displayAvatarURL(),
       });
     interaction.reply({ embeds: [statsembed] });

@@ -2,7 +2,7 @@ const ms = require("ms");
 
 module.exports = {
   name: "edit",
-  description: "🎉 Edit a giveaway",
+  description: "✏️ Edit a giveaway",
 
   options: [
     {
