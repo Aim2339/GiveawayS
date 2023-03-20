@@ -2,10 +2,7 @@ const config = require("../../config.json");
 
 module.exports = (client, interaction) => {
   if (interaction.isCommand()) {
-    if (
-      config.maintenanceMode &&
-      interaction.user.id !== "756060979896385606"
-    ) {
+    if (config.maintenanceMode && interaction.user.id !== config.ownerId) {
       return interaction.reply({
         content:
           "```yaml\nSorry, the bot is currently under maintenance. Please try again later within 15 minutes!```",

@@ -1,7 +1,9 @@
 {
-  "TOKEN": "BOT_TOKEN_HERE",
-  "MONGO_URL": "MONGO_URL_HERE",
+  "TOKEN": "BOT_TOKEN",
+  "MONGO_URL": "MONGODB_URL",
   "everyoneMention": false,
   "hostedBy": true,
-  "maintenanceMode": false
+  "maintenanceMode": false,
+  "ownerID": "OWNER_ID",
+  "feedbackChannelId": "CHANNEL_ID"
 }
