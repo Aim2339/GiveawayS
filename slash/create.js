@@ -43,12 +43,6 @@ module.exports = {
       default: false,
     },
     {
-      name: "pingrole",
-      description: "The role to ping when starting the giveaway",
-      type: "ROLE",
-      required: false,
-    },
-    {
       name: "bonusrole",
       description: "Role which would recieve bonus entries",
       type: "ROLE",
@@ -72,13 +66,6 @@ module.exports = {
       type: "STRING",
       required: false,
     },
-    {
-      name: "note",
-      description:
-        "Anything you wanna type (can include requirements/how to claim)",
-      type: "STRING",
-      required: false,
-    },
   ],
 
   run: async (client, interaction) => {
@@ -98,10 +85,8 @@ module.exports = {
     const giveawayDuration = interaction.options.getString("duration");
     const giveawayWinnerCount = interaction.options.getInteger("winners");
     const giveawayPrize = interaction.options.getString("prize");
-    const giveawayPing = interaction.options.getRole("pingrole");
     const bonusRole = interaction.options.getRole("bonusrole");
     const bonusEntries = interaction.options.getInteger("bonusamount");
-    const giveawayNote = interaction.options.getString("note");
     const thumbnail = interaction.options.getString("thumbnail");
     const rolereq = interaction.options.getRole("reqrole");
     const logChannel = interaction.guild.channels.cache.find(
@@ -201,23 +186,10 @@ module.exports = {
       messages.inviteToParticipate = `**React with 🎉 to participate!**`;
     }
 
-    const nembed = new MessageEmbed()
-      .setTitle("Note from the host")
-      .setColor("RANDOM")
-      .setTimestamp()
-      .addFields({
-        name: `Note from ${interaction.user.username}!`,
-        value: `>>> ${giveawayNote}`,
-      })
-      .setFooter({
-        text: `Note from ${interaction.user.username} | GiveawayS`,
-        iconURL: interaction.user.displayAvatarURL(),
-      });
-
     let msg = await interaction.reply({
       content: `**Is everything correct?**\n>>> >>> - Channel: ${giveawayChannel}\n>>> - Duration: ${giveawayDuration}\n>>> - Winners: ${giveawayWinnerCount}\n>>> - Prize: ${giveawayPrize}\n>>> - Active bonus: ${interaction.options.getBoolean(
         "activebonus"
-      )}\n>>> - Role to ping: ${giveawayPing}\n>>> - Bonus role: ${bonusRole}\n>>> - Bonus amount: ${bonusEntries}\n>>> - Requirement role: ${rolereq}\n>>> - Thumbnail: ${thumbnail}\n>>> - Note: ${giveawayNote}`,
+      )}\n>>> - Bonus role: ${bonusRole}\n>>> - Bonus amount: ${bonusEntries}\n>>> - Requirement role: ${rolereq}\n>>> - Thumbnail: ${thumbnail}`,
       ephemeral: false,
       fetchReply: true,
     });
@@ -297,20 +269,6 @@ module.exports = {
               `**Giveaway started!**\n>>> ${interaction.user.username} started a giveaway of **${giveawayPrize}** in ${giveawayChannel}!`
             );
           } else {
-            return;
-          }
-
-          if (giveawayNote && giveawayPing) {
-            giveawayChannel.send({ embeds: [nembed] });
-            giveawayChannel.send(`${giveawayPing}`);
-          }
-          if (giveawayNote && !giveawayPing) {
-            giveawayChannel.send({ embeds: [nembed] });
-          }
-          if (!giveawayNote && giveawayPing) {
-            giveawayChannel.send(`${giveawayPing}`);
-          }
-          if (!giveawayNote && !giveawayPing) {
             return;
           }
         } else {

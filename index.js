@@ -100,11 +100,11 @@ fs.readdir("./events/giveaways", (_err, files) => {
   });
 });
 
-client.commands = new Discord.Collection();
-
+// let interactions be a new collection (slash commands)
 client.interactions = new Discord.Collection();
-
+// creating an empty array for registering slash commands
 client.register_arr = [];
+/* Load all slash commands */
 fs.readdir("./slash/", (_err, files) => {
   files.forEach((file) => {
     if (!file.endsWith(".js")) return;
@@ -118,8 +118,26 @@ fs.readdir("./slash/", (_err, files) => {
   });
 });
 
+// Let commands be a new collection (message commands)
+client.commands = new Discord.Collection();
+/* Load all commands */
+fs.readdir("./commands/", (_err, files) => {
+  files.forEach((file) => {
+    if (!file.endsWith(".js")) return;
+    let props = require(`./commands/${file}`);
+    let commandName = file.split(".")[0];
+    client.commands.set(commandName, {
+      name: commandName,
+      ...props,
+    });
+  });
+});
+
 client.login(config.TOKEN);
 
+// Uncomment the following lines to prevent the bot from crashing when an error occurs
+// WARNING: This will make debugging more difficult
+/*
 // #1
 process.on("unhandledRejection", (reason, promise) => {
   console.log("Unhandled Rejection at: " + promise);
@@ -142,3 +160,4 @@ process.on("uncaughtExceptionMonitor", (err, origin) => {
 process.on("multipleResolves", (type, promise, reason) => {
   console.log(type, promise, reason);
 });
+*/

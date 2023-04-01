@@ -3,6 +3,7 @@
   "MONGO_URL": "MONGODB_URL",
   "everyoneMention": false,
   "hostedBy": true,
+  "prefix": "BOT_PREFIX",
   "maintenanceMode": false,
   "ownerID": "OWNER_ID",
   "feedbackChannelId": "CHANNEL_ID"

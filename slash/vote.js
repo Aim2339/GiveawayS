@@ -2,7 +2,7 @@ const { MessageEmbed, MessageActionRow, MessageButton } = require("discord.js");
 
 module.exports = {
   name: "vote",
-  description: "➕ Vote for the bot!",
+  description: "🗳️ Vote for the bot!",
 
   run: async (client, interaction) => {
     const row = new MessageActionRow().addComponents(
