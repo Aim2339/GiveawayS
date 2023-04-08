@@ -10,6 +10,14 @@ module.exports = (client, interaction) => {
       });
     }
 
+    if (!interaction.guild) {
+      return interaction.reply({
+        content:
+          "Sorry, this bot does not support DM commands. Please use the bot in a server.",
+        ephemeral: true,
+      });
+    }
+
     const command = client.interactions.get(interaction.commandName);
 
     if (!command) {

@@ -5,7 +5,7 @@ module.exports = {
   name: "meme",
   description: "🐸 Fetches a random meme from r/memes",
 
-  async run(client, interaction) {
+  run: async (client, interaction) => {
     const embed = new MessageEmbed()
       .setTitle("Loading 50 memes...")
       .setColor("RANDOM");

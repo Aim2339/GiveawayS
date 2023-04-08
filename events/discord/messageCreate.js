@@ -1,8 +1,8 @@
 const messageCount = require("../../schema/messageCount");
 
 module.exports = (client, message) => {
-  // Ignore messages sent by bots
-  if (message.author.bot) return;
+  // Ignore messages sent by bots or in DMs
+  if (message.author.bot || !message.guild) return;
 
   // check if the document already exist
   messageCount.findOne(

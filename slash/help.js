@@ -13,7 +13,7 @@ module.exports = {
       .setTitle(`Commands of ${client.user.username}`)
       .setColor("RANDOM")
       .setDescription(
-        "**Please Select a category to view all its commands**\nCurrently 19 commands are registered to the bot!"
+        "**Please Select a category to view all its commands**\nCurrently 20 commands are registered to the bot!"
       )
       .setThumbnail(client.user.displayAvatarURL())
       .setTimestamp()
