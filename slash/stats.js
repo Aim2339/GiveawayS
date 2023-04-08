@@ -89,9 +89,13 @@ module.exports = {
           name: "Ram Usage",
           value: `\`${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(
             2
-          )}MB/ ${(os.totalmem() / 1024 / 1024).toFixed(2)}MB\``,
+          )}MB / ${(os.totalmem() / 1024 / 1024).toFixed(2)}MB (${(
+            (process.memoryUsage().heapUsed / os.totalmem()) *
+            100
+          ).toFixed(2)}%)\``,
           inline: true,
         },
+
         {
           name: "Developer",
           value: `\`${developer}\``,

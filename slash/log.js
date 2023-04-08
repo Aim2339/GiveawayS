@@ -60,7 +60,7 @@ module.exports = {
         await interaction.followUp({
           content: `Channel will be set to ${
             isPrivate ? "private" : "public"
-          }.\n1. Please don't edit the name of the channel else it won't work!\n2. If you want to stop the giveaway log in that channel then edit the name or manually delete it!\n3. If 2 channels were made delete the one where a message hasn't been sent by the bot!`,
+          }.\n1. Please don't edit the name of the channel else it won't work!\n2. If you want to stop the giveaway log in that channel then edit the name or manually delete it!`,
           ephemeral: true,
         });
 
@@ -97,14 +97,8 @@ module.exports = {
     });
 
     collector.on("end", async () => {
-      try {
-        await interaction.editReply({
-          content: `Done`,
-          components: [],
-        });
-      } catch (error) {
-        console.error(error);
-      }
+      row.components.forEach((c) => c.setDisabled(true));
+      await interaction.editReply({ components: [row] });
     });
   },
 };

@@ -144,6 +144,11 @@ module.exports = {
           name: "🧞 __Akinator__",
           value: `Play Akinator with the bot!\n > **Command: \`/akinator\`**`,
           inline: true,
+        },
+        {
+          name: "🐸 __Meme__",
+          value: `Fetches a random meme from r/memes!\n > **Command: \`/meme\`**`,
+          inline: true,
         }
       )
       .setTimestamp()
