@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const MessageCount = require("../../schema/messageCount");
+const GiveawayBan = require("../../schema/giveawayBan");
 
 module.exports = {
   async execute(giveaway, reactor, messageReaction) {
@@ -23,7 +24,26 @@ module.exports = {
 
     let client = messageReaction.message.client;
     if (reactor.user.bot) return;
-    if (giveaway.extraData) {
+    const giveawayBanDoc = await GiveawayBan.findOne({
+      userId: reactor.id,
+      guildId: reactor.guild.id,
+    }).exec();
+    if (giveawayBanDoc) {
+      messageReaction.users.remove(reactor.user);
+      return reactor
+        .send({
+          embeds: [
+            new Discord.MessageEmbed()
+              .setTimestamp()
+              .setColor("RED")
+              .setTitle(":x: You are banned from participating in giveaways!")
+              .setDescription(
+                `You have been banned from participating in giveaways. If you think this is a mistake, please contact the server moderators.`
+              ),
+          ],
+        })
+        .catch((e) => {});
+    } else if (giveaway.extraData) {
       if (
         giveaway.extraData.role !== "null" &&
         !reactor.roles.cache.get(giveaway.extraData.role)

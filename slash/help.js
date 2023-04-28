@@ -13,7 +13,7 @@ module.exports = {
       .setTitle(`Commands of ${client.user.username}`)
       .setColor("RANDOM")
       .setDescription(
-        "**Please Select a category to view all its commands**\nCurrently 20 commands are registered to the bot!"
+        "**Please Select a category to view all its commands**\nCurrently 21 commands are registered to the bot!"
       )
       .setThumbnail(client.user.displayAvatarURL())
       .setTimestamp()
@@ -70,6 +70,11 @@ module.exports = {
         {
           name: "🗑️ __Delete__",
           value: `Delete a ended giveaway!\n > **Command: \`/delete\`**`,
+          inline: true,
+        },
+        {
+          name: "🚫__Ban-Unban__",
+          value: `Ban or unban a user from participating in giveaways in this guild!\n > **Command: \`/ban-unban\`**`,
           inline: true,
         },
         {

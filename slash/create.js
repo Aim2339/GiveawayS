@@ -224,8 +224,12 @@ module.exports = {
               {
                 bonus: new Function(
                   "member",
-                  `return member.roles.cache.some((r) => r.name === '${bonusRole?.name}') ? ${bonusEntries} : null`
+                  `return member.roles.cache.some((r) => r.name === '${bonusRole?.name.replace(
+                    /'/g,
+                    "\\'"
+                  )}') ? ${bonusEntries} : null`
                 ),
+
                 cumulative: false,
               },
               {
