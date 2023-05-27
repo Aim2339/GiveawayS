@@ -1,6 +1,8 @@
 const { MessageActionRow, MessageButton, MessageEmbed } = require("discord.js");
 const fetch = require("reddit-image-fetcher");
 
+const SavedMeme = require("../schema/savedMeme");
+
 module.exports = {
   name: "meme",
   description: "🐸 Fetches a random meme from r/memes",
@@ -18,7 +20,8 @@ module.exports = {
       new MessageButton()
         .setCustomId("next")
         .setStyle("SECONDARY")
-        .setEmoji("➡️")
+        .setEmoji("➡️"),
+      new MessageButton().setCustomId("like").setStyle("SUCCESS").setEmoji("❤️")
     );
 
     const message = await interaction.reply({
@@ -72,6 +75,36 @@ module.exports = {
         index = (index - 1 + memes.length) % memes.length;
       } else if (i.customId === "next") {
         index = (index + 1) % memes.length;
+      } else if (i.customId === "like") {
+        const memeToSave = memes[index];
+
+        const existingMeme = await SavedMeme.findOne({
+          postLink: memeToSave.postLink,
+          userId: interaction.user.id,
+        });
+
+        if (existingMeme) {
+          return interaction.followUp({
+            content:
+              "You have already saved this meme! Try `/saved-memes` to see your saved memes.",
+            ephemeral: true,
+          });
+        }
+
+        const savedMeme = new SavedMeme({
+          title: memeToSave.title,
+          postLink: memeToSave.postLink,
+          image: memeToSave.image,
+          upvotes: memeToSave.upvotes,
+          userId: interaction.user.id,
+        });
+
+        await savedMeme.save();
+        return interaction.followUp({
+          content:
+            "Meme saved successfully! Try `/saved-memes` to see your saved memes.",
+          ephemeral: true,
+        });
       }
 
       const meme = memes[index];

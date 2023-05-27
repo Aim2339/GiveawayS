@@ -13,7 +13,7 @@ module.exports = {
       .setTitle(`Commands of ${client.user.username}`)
       .setColor("RANDOM")
       .setDescription(
-        "**Please Select a category to view all its commands**\nCurrently 21 commands are registered to the bot!"
+        "**Please Select a category to view all its commands**\nCurrently 22 commands are registered to the bot!"
       )
       .setThumbnail(client.user.displayAvatarURL())
       .setTimestamp()
@@ -153,6 +153,11 @@ module.exports = {
         {
           name: "🐸 __Meme__",
           value: `Fetches a random meme from r/memes!\n > **Command: \`/meme\`**`,
+          inline: true,
+        },
+        {
+          name: "📚 __Saved Memes__",
+          value: `Shows your saved memes!\n > **Command: \`/saved-memes\`**`,
           inline: true,
         }
       )
