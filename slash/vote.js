@@ -15,7 +15,7 @@ module.exports = {
       .setAuthor({ name: "Vote on Top.gg", iconURL: client.user.avatarURL() })
       .setTitle("Vote Link!")
       .setDescription(
-        `Every vote counts, if you like ${client.user} then help us by voting!`
+        `Every vote counts, if you like ${client.user} then help us by voting!\nIf you really love us, then go ahead and post a nice review as well!`
       )
       .setColor("RANDOM")
       .setTimestamp()
