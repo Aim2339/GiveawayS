@@ -5,13 +5,40 @@ const Sentiment = require("sentiment");
 module.exports = {
   name: "feedback",
   description: "✍️ Send me feedback (can include bugs/issues)",
-
   options: [
     {
       name: "content",
       description: "What feedback to send",
       type: "STRING",
       required: true,
+    },
+    {
+      name: "category",
+      description: "Select a feedback category",
+      type: "STRING",
+      required: true,
+      choices: [
+        {
+          name: "Bug",
+          value: "bug",
+        },
+        {
+          name: "Question",
+          value: "question",
+        },
+        {
+          name: "Feature Request",
+          value: "feature",
+        },
+        {
+          name: "Suggestion",
+          value: "suggestion",
+        },
+        {
+          name: "Other",
+          value: "other",
+        },
+      ],
     },
     {
       name: "anonymous",
@@ -26,11 +53,12 @@ module.exports = {
       required: false,
     },
   ],
-
   run: async (client, interaction) => {
     const feedback = interaction.options.getString("content");
+    const category = interaction.options.getString("category");
     const anonymous = interaction.options.getBoolean("anonymous") || false;
     const screenshot = interaction.options.getAttachment("screenshot") || null;
+
     // Check if feedback content is too long
     if (feedback.length > 500) {
       return interaction.reply({
@@ -62,6 +90,10 @@ module.exports = {
           value: `\`\`\`${feedback}\`\`\``,
         },
         {
+          name: "Category",
+          value: `\`\`\`${category}\`\`\``,
+        },
+        {
           name: "Sentiment",
           value: `\`\`\`${
             result.score > 0 ? "👍" : result.score < 0 ? "👎" : "🤔"
@@ -75,7 +107,6 @@ module.exports = {
         text: `Requested by ${interaction.user.username} | GiveawayS`,
         iconURL: interaction.user.displayAvatarURL(),
       });
-
     interaction.reply({ embeds: [fembed] });
 
     const aembed = new MessageEmbed()
@@ -86,6 +117,10 @@ module.exports = {
         {
           name: "Content",
           value: `\`\`\`${feedback}\`\`\``,
+        },
+        {
+          name: "Category",
+          value: `\`\`\`${category}\`\`\``,
         },
         {
           name: "Sent by",
@@ -107,7 +142,6 @@ module.exports = {
         text: `Requested by ${interaction.user.username} | GiveawayS`,
         iconURL: interaction.user.displayAvatarURL(),
       });
-
     if (screenshot) {
       const attachment = new MessageAttachment(screenshot.url);
       aembed.setImage(`attachment://${screenshot.name}`);
