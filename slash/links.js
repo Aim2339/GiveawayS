@@ -39,7 +39,7 @@ module.exports = {
       new MessageButton()
         .setLabel(`Website Link`)
         .setStyle("LINK")
-        .setURL(`https://aim2339.github.io/GiveawayS/`)
+        .setURL(`https://aim2339.github.io/Website/`)
     );
 
     const row3 = new MessageActionRow().addComponents(

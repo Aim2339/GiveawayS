@@ -2,6 +2,7 @@ const {
   MessageEmbed,
   MessageActionRow,
   MessageSelectMenu,
+  MessageButton,
 } = require("discord.js");
 
 module.exports = {
@@ -13,9 +14,40 @@ module.exports = {
       .setTitle(`Commands of ${client.user.username}`)
       .setColor("RANDOM")
       .setDescription(
-        "**Please Select a category to view all its commands**\nCurrently 22 commands are registered to the bot!"
+        "**Please Select a category to view all its commands**\nCurrently 21 commands are registered to the bot!"
       )
+      .addFields({
+        name: "Some Important Links",
+        value:
+          "[Invite Me](https://discord.com/api/oauth2/authorize?client_id=900628889452314674&permissions=8&scope=applications.commands%20bot)\n[Vote me](https://top.gg/bot/900628889452314674/vote)\n[Website](https://aim2339.github.io/Website)\n[GitHub](https://github.com/Aim2339/GiveawayS/)",
+      })
       .setThumbnail(client.user.displayAvatarURL())
+      .setTimestamp()
+      .setFooter({
+        text: `Requested by ${interaction.user.username} | GiveawayS`,
+        iconURL: interaction.user.displayAvatarURL(),
+      });
+
+    const allCommands = new MessageEmbed()
+      .setTitle("All Commands")
+      .setColor("RANDOM")
+      .setDescription("```yaml\nHere are all the commands categorized:```")
+      .addFields(
+        {
+          name: "Categories » Giveaway (11)",
+          value:
+            "`/create`, `/drop`, `/edit`, `/end`, `/list`, `/pause`, `/reroll`, `/resume`, `/delete`, `/ban-unban`, `/log`",
+        },
+        {
+          name: "Categories » General (7)",
+          value:
+            "`/help`, `/invite`, `/ping`, `/vote`, `/feedback`, `/links`, `/stats`",
+        },
+        {
+          name: "Categories » Fun (3)",
+          value: "`/games`, `/meme`, `/saved-memes`",
+        }
+      )
       .setTimestamp()
       .setFooter({
         text: `Requested by ${interaction.user.username} | GiveawayS`,
@@ -146,11 +178,6 @@ module.exports = {
           inline: true,
         },
         {
-          name: "🧞 __Akinator__",
-          value: `Play Akinator with the bot!\n > **Command: \`/akinator\`**`,
-          inline: true,
-        },
-        {
           name: "🐸 __Meme__",
           value: `Fetches a random meme from r/memes!\n > **Command: \`/meme\`**`,
           inline: true,
@@ -194,6 +221,18 @@ module.exports = {
             },
           ])
       ),
+      new MessageActionRow().addComponents(
+        new MessageButton()
+          .setCustomId("all-commands-button")
+          .setLabel("All Commands")
+          .setStyle("PRIMARY")
+          .setEmoji("📜"),
+        new MessageButton()
+          .setCustomId("home-button")
+          .setLabel("Home")
+          .setStyle("PRIMARY")
+          .setEmoji("🏠")
+      ),
     ];
 
     const initialMessage = await interaction.reply({
@@ -232,6 +271,26 @@ module.exports = {
           content: "Collector Destroyed, Try Again!",
           components: [],
         });
+      }
+    });
+
+    const buttonCollector = interaction.channel.createMessageComponentCollector(
+      {
+        filter,
+        componentType: "BUTTON",
+        idle: 50000,
+        dispose: true,
+      }
+    );
+    buttonCollector.on("collect", (interaction) => {
+      if (interaction.customId === "all-commands-button") {
+        interaction
+          .update({ embeds: [allCommands], components: components(false) })
+          .catch((e) => {});
+      } else if (interaction.customId === "home-button") {
+        interaction
+          .update({ embeds: [embed], components: components(false) })
+          .catch((e) => {});
       }
     });
   },
