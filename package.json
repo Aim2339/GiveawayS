@@ -27,7 +27,7 @@
     "express": "^4.18.2",
     "fero-ms": "^2.0.7",
     "moment-timezone": "^0.5.38",
-    "mongoose": "^6.10.1",
+    "mongoose": "^6.12.0",
     "ms": "^2.1.3",
     "node_extra_ca_certs_mozilla_bundle": "^1.0.5",
     "npm": "^8.19.4",
