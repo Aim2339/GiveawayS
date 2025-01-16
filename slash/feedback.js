@@ -98,9 +98,9 @@ module.exports = {
           value: `\`\`\`${
             result.score > 0 ? "👍" : result.score < 0 ? "👎" : "🤔"
           } ${result.comparative > 0 ? "+" : ""}${result.comparative.toFixed(
-            2
+            2,
           )} (${result.words.length} words)\`\`\``,
-        }
+        },
       )
       .setTimestamp()
       .setFooter({
@@ -133,9 +133,9 @@ module.exports = {
           value: `\`\`\`${
             result.score > 0 ? "👍" : result.score < 0 ? "👎" : "🤔"
           } ${result.comparative > 0 ? "+" : ""}${result.comparative.toFixed(
-            2
+            2,
           )} (${result.words.length} words)\`\`\``,
-        }
+        },
       )
       .setTimestamp()
       .setFooter({

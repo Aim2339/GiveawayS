@@ -57,7 +57,7 @@ const giveawaySchema = new mongoose.Schema(
       roles: { type: [String], default: undefined },
     },
   },
-  { id: false }
+  { id: false },
 );
 
 module.exports = mongoose.model("giveaways", giveawaySchema);

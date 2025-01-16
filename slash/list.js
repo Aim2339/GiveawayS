@@ -17,7 +17,7 @@ module.exports = {
       ]);
     const row = new Discord.MessageActionRow().addComponents([select]);
     let giveaways = client.giveawaysManager.giveaways.filter(
-      (g) => g.guildId === `${interaction.guild.id}` && !g.ended
+      (g) => g.guildId === `${interaction.guild.id}` && !g.ended,
     );
     if (!giveaways.some((e) => e.messageId)) {
       return interaction.reply("💥 No Giveaways To Be Displayed");
@@ -42,7 +42,7 @@ module.exports = {
     const filter = (x) =>
       x.customId == "select" && x.user.id == interaction.member.id;
     const collector = await interaction.channel.createMessageComponentCollector(
-      { filter, time: 60000, max: 1 }
+      { filter, time: 60000, max: 1 },
     );
     await interaction.deferReply();
     collector.on("collect", async (i) => {
@@ -57,12 +57,12 @@ module.exports = {
               }/${x.channelId}/${x.messageId})\nStarted:** <t:${(
                 x.startAt / 1000
               ).toFixed(0)}:R> (<t:${(x.startAt / 1000).toFixed(
-                0
+                0,
               )}:f>)\n**Ends:** <t:${(x.endAt / 1000).toFixed(0)}:R> (<t:${(
                 x.endAt / 1000
-              ).toFixed(0)}:f>)`
+              ).toFixed(0)}:f>)`,
             );
-          })
+          }),
         );
         msg.delete();
         interaction.editReply({ embeds: [embed], components: [] });

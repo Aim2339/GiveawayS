@@ -28,7 +28,7 @@ module.exports = {
         {
           name: "**MongoDB Latency**",
           value: `\`${mongoPing}\``,
-        }
+        },
       )
       .setTimestamp()
       .setFooter({

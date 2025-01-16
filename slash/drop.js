@@ -44,7 +44,7 @@ module.exports = {
     const giveawayWinnerCount = interaction.options.getInteger("winners");
     const giveawayPrize = interaction.options.getString("prize");
     const logChannel = interaction.guild.channels.cache.find(
-      (channel) => channel.name === "giveaway-log"
+      (channel) => channel.name === "giveaway-log",
     );
 
     if (!giveawayChannel.isText()) {
@@ -96,7 +96,7 @@ module.exports = {
 
           if (logChannel) {
             logChannel.send(
-              `**Giveaway started!**\n>>> ${interaction.user.username} started a giveaway of **${giveawayPrize}** in ${giveawayChannel}!`
+              `**Giveaway started!**\n>>> ${interaction.user.username} started a giveaway of **${giveawayPrize}** in ${giveawayChannel}!`,
             );
           } else {
             return;
@@ -108,7 +108,7 @@ module.exports = {
       })
       .catch((collected) => {
         interaction.editReply(
-          ":x: You took time to reply, giveaway was canceled!"
+          ":x: You took time to reply, giveaway was canceled!",
         );
         msg.reactions.removeAll();
       });

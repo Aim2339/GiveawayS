@@ -13,11 +13,11 @@ module.exports = async (client) => {
     })),
     {
       debug: true,
-    }
+    },
   );
 
   console.log(
-    colors.brightGreen(`[ / | Slash Command ] - ✅ Loaded all slash commands!`)
+    colors.brightGreen(`[ / | Slash Command ] - ✅ Loaded all slash commands!`),
   );
   const invite = `https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=applications.commands%20bot`;
   const uptime = `https://stats.uptimerobot.com/8gMWRsXP3N/`;
@@ -33,7 +33,7 @@ module.exports = async (client) => {
 
   console.log(
     colors.brightGreen(
-      `[Status] ${client.user.tag} is now online!\n[Invite Link] ${invite}\n[Bot Uptime Status] ${uptime}`
-    )
+      `[Status] ${client.user.tag} is now online!\n[Invite Link] ${invite}\n[Bot Uptime Status] ${uptime}`,
+    ),
   );
 };

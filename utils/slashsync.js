@@ -7,7 +7,7 @@ module.exports = async (
   options = {
     debug: false,
     guildId: null,
-  }
+  },
 ) => {
   const log = (message) => options.debug && console.log(message);
 
@@ -16,18 +16,18 @@ module.exports = async (
     : new Promise((resolve) => client.once("ready", resolve));
   await ready;
   const currentCommands = await client.application.commands.fetch(
-    options.guildId && { guildId: options.guildId }
+    options.guildId && { guildId: options.guildId },
   );
 
   log(colors.brightMagenta(`Synchronizing commands...`));
   log(
     colors.brightMagenta(
-      `Currently ${currentCommands.size} commands are registered to the bot!`
-    )
+      `Currently ${currentCommands.size} commands are registered to the bot!`,
+    ),
   );
 
   const newCommands = commands.filter(
-    (command) => !currentCommands.some((c) => c.name === command.name)
+    (command) => !currentCommands.some((c) => c.name === command.name),
   );
   for (let newCommand of newCommands) {
     await client.application.commands.create(newCommand, options.guildId);
@@ -45,20 +45,20 @@ module.exports = async (
   log(colors.brightMagenta(`Deleted ${deletedCommands.length} commands!`));
 
   const updatedCommands = commands.filter((command) =>
-    currentCommands.some((c) => c.name === command.name)
+    currentCommands.some((c) => c.name === command.name),
   );
   let updatedCommandCount = 0;
   for (let updatedCommand of updatedCommands) {
     const newCommand = updatedCommand;
     const previousCommand = currentCommands.find(
-      (c) => c.name === updatedCommand.name
+      (c) => c.name === updatedCommand.name,
     );
     let modified = false;
     if (previousCommand.description !== newCommand.description) modified = true;
     if (
       !Discord.ApplicationCommand.optionsEqual(
         previousCommand.options ?? [],
-        newCommand.options ?? []
+        newCommand.options ?? [],
       )
     )
       modified = true;

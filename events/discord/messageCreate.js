@@ -19,7 +19,7 @@ module.exports = (client, message) => {
             if (err) {
               return;
             }
-          }
+          },
         );
       } else {
         // increment the count by 1
@@ -30,10 +30,10 @@ module.exports = (client, message) => {
             if (err) {
               return;
             }
-          }
+          },
         );
       }
-    }
+    },
   );
 
   if (
@@ -44,7 +44,7 @@ module.exports = (client, message) => {
   ) {
     // Reply to the message with a custom response
     message.reply(
-      `Hello, ${message.author.username}! I use slash commands. Try \`/help\`!`
+      `Hello, ${message.author.username}! I use slash commands. Try \`/help\`!`,
     );
   }
   // return if message does not match prefix (in command)

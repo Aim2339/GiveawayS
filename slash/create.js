@@ -90,7 +90,7 @@ module.exports = {
     const thumbnail = interaction.options.getString("thumbnail");
     const rolereq = interaction.options.getRole("reqrole");
     const logChannel = interaction.guild.channels.cache.find(
-      (channel) => channel.name === "giveaway-log"
+      (channel) => channel.name === "giveaway-log",
     );
 
     if (!giveawayChannel.isText()) {
@@ -188,7 +188,7 @@ module.exports = {
 
     let msg = await interaction.reply({
       content: `**Is everything correct?**\n>>> >>> - Channel: ${giveawayChannel}\n>>> - Duration: ${giveawayDuration}\n>>> - Winners: ${giveawayWinnerCount}\n>>> - Prize: ${giveawayPrize}\n>>> - Active bonus: ${interaction.options.getBoolean(
-        "activebonus"
+        "activebonus",
       )}\n>>> - Bonus role: ${bonusRole}\n>>> - Bonus amount: ${bonusEntries}\n>>> - Requirement role: ${rolereq}\n>>> - Thumbnail: ${thumbnail}`,
       ephemeral: false,
       fetchReply: true,
@@ -226,7 +226,7 @@ module.exports = {
                   "member",
                   `return member.roles.cache.some((r) => r.name === '${bonusRole?.name
                     .replace(/\\/g, "\\\\")
-                    .replace(/'/g, "\\'")}') ? ${bonusEntries} : null`
+                    .replace(/'/g, "\\'")}') ? ${bonusEntries} : null`,
                 ),
 
                 cumulative: false,
@@ -269,7 +269,7 @@ module.exports = {
 
           if (logChannel) {
             logChannel.send(
-              `**Giveaway started!**\n>>> ${interaction.user.username} started a giveaway of **${giveawayPrize}** in ${giveawayChannel}!`
+              `**Giveaway started!**\n>>> ${interaction.user.username} started a giveaway of **${giveawayPrize}** in ${giveawayChannel}!`,
             );
           } else {
             return;
@@ -281,7 +281,7 @@ module.exports = {
       })
       .catch((collected) => {
         interaction.editReply(
-          ":x: You took time to reply, giveaway was canceled!"
+          ":x: You took time to reply, giveaway was canceled!",
         );
         msg.reactions.removeAll();
       });

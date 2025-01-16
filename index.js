@@ -70,7 +70,7 @@ const manager = new GiveawayManagerWithOwnDatabase(
       },
     },
   },
-  false
+  false,
 ); // ATTENTION: Add "false" in order to not start the manager until the DB got checked, see below
 // We now have a giveawaysManager property to access the manager everywhere!
 client.giveawaysManager = manager;
@@ -94,7 +94,7 @@ fs.readdir("./events/giveaways", (_err, files) => {
     let eventName = file.split(".")[0];
     console.log(colors.blue(`[Event]   🎉 Loaded: ${eventName}`));
     client.giveawaysManager.on(eventName, (...file) =>
-      event.execute(...file, client)
+      event.execute(...file, client),
     ),
       delete require.cache[require.resolve(`./events/giveaways/${file}`)];
   });

@@ -8,10 +8,10 @@ module.exports = {
       .setTimestamp()
       .setColor("RANDOM")
       .setTitle(
-        ":white_check_mark: Entry Approved! | You have a chance to win!!"
+        ":white_check_mark: Entry Approved! | You have a chance to win!!",
       )
       .setDescription(
-        `Your entry to [This Giveaway](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId}) has been approved!`
+        `Your entry to [This Giveaway](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId}) has been approved!`,
       );
 
     let denied = new Discord.MessageEmbed()
@@ -19,7 +19,7 @@ module.exports = {
       .setColor("RANDOM")
       .setTitle(":x: Entry Denied | Databse Entry Not Found & Returned!")
       .setDescription(
-        `Your entry to [This Giveaway](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId}) has been denied, please review the requirements to the giveaway properly.`
+        `Your entry to [This Giveaway](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId}) has been denied, please review the requirements to the giveaway properly.`,
       );
 
     let client = messageReaction.message.client;
@@ -38,7 +38,7 @@ module.exports = {
               .setColor("RED")
               .setTitle(":x: You are banned from participating in giveaways!")
               .setDescription(
-                `You have been banned from participating in giveaways. If you think this is a mistake, please contact the server moderators.`
+                `You have been banned from participating in giveaways. If you think this is a mistake, please contact the server moderators.`,
               ),
           ],
         })
@@ -82,7 +82,7 @@ module.exports = {
                 .setColor("RANDOM")
                 .setTitle(":white_check_mark: Active Bonus Entry Approved!")
                 .setDescription(
-                  `You have received an active bonus entry for this giveaway based on your message count! You will receive ${activeBonus} bonus entries and you have sent a total of ${messageCount} messages in this guild.`
+                  `You have received an active bonus entry for this giveaway based on your message count! You will receive ${activeBonus} bonus entries and you have sent a total of ${messageCount} messages in this guild.`,
                 ),
             ],
           })

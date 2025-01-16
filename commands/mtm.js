@@ -10,13 +10,13 @@ module.exports.run = async (client, message, args) => {
 
   if (!mode) {
     return message.reply(
-      `Please specify a mode (\`true/false\`). Current mode is \`${config.maintenanceMode}\`.`
+      `Please specify a mode (\`true/false\`). Current mode is \`${config.maintenanceMode}\`.`,
     );
   }
 
   if (mode !== "true" && mode !== "false") {
     return message.reply(
-      "Invalid mode. Please specify either `true` or `false`."
+      "Invalid mode. Please specify either `true` or `false`.",
     );
   }
 
@@ -26,7 +26,7 @@ module.exports.run = async (client, message, args) => {
     if (err) {
       console.error(err);
       return message.reply(
-        "An error occurred while changing maintenance mode."
+        "An error occurred while changing maintenance mode.",
       );
     }
 

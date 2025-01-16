@@ -19,7 +19,7 @@ module.exports = {
     const embed = new MessageEmbed()
       .setTitle("Choose channel visibility")
       .setDescription(
-        "Would you like the log channel to be visible to everyone or only to people having permission to create giveaways?"
+        "Would you like the log channel to be visible to everyone or only to people having permission to create giveaways?",
       )
       .setColor("RANDOM");
 
@@ -28,13 +28,13 @@ module.exports = {
         new MessageButton()
           .setCustomId("public")
           .setLabel("Public")
-          .setStyle("PRIMARY")
+          .setStyle("PRIMARY"),
       )
       .addComponents(
         new MessageButton()
           .setCustomId("private")
           .setLabel("Private")
-          .setStyle("PRIMARY")
+          .setStyle("PRIMARY"),
       );
 
     const message = await interaction.reply({
@@ -85,11 +85,11 @@ module.exports = {
           {
             type: "text",
             permissionOverwrites: overwrites,
-          }
+          },
         );
 
         await logChannel.send(
-          `**This channel has been set up by ${interaction.user} for receiving giveaway logs!**`
+          `**This channel has been set up by ${interaction.user} for receiving giveaway logs!**`,
         );
 
         collector.stop();

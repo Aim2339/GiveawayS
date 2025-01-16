@@ -38,18 +38,18 @@ module.exports.run = async (client, message, args) => {
   // Validate message content
   if (content.length > 1024) {
     return message.reply(
-      "Message content is too long. Maximum length is 1024 characters."
+      "Message content is too long. Maximum length is 1024 characters.",
     );
   }
 
   // Create an embed message with the message content
   const embed = new MessageEmbed()
     .setTitle(
-      `Message from the owner: ${message.author.username}#${message.author.discriminator}`
+      `Message from the owner: ${message.author.username}#${message.author.discriminator}`,
     )
     .setThumbnail(user.displayAvatarURL())
     .setDescription(
-      `The owner sent you a message. Please read it carefully.\nYour messages will not be stored anywhere and you will be able to reply to this message if you want using the **/feedback** command.`
+      `The owner sent you a message. Please read it carefully.\nYour messages will not be stored anywhere and you will be able to reply to this message if you want using the **/feedback** command.`,
     )
     .addFields({
       name: "Here's the content of the message:",
@@ -71,14 +71,14 @@ module.exports.run = async (client, message, args) => {
     new MessageButton()
       .setCustomId("cancel")
       .setLabel("Cancel")
-      .setStyle("DANGER")
+      .setStyle("DANGER"),
   );
 
   // Send a confirmation message to the command invoker
   const confirmEmbed = new MessageEmbed()
     .setTitle("Confirm Message")
     .setDescription(
-      `Are you sure you want to send the following message to ${user}?`
+      `Are you sure you want to send the following message to ${user}?`,
     )
     .addFields({
       name: "Message Content:",

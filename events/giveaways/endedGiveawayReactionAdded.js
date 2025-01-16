@@ -9,7 +9,7 @@ module.exports = {
             .setTitle(`Giveaway ended already!`)
             .setColor("RANDOM")
             .setDescription(
-              `Hey ${member.user} **[[This Giveaway]](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId})** that you reacted has already ended :sob:\nBe quick next time!`
+              `Hey ${member.user} **[[This Giveaway]](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId})** that you reacted has already ended :sob:\nBe quick next time!`,
             )
             .setTimestamp(),
         ],
