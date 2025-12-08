@@ -14,7 +14,7 @@ module.exports = {
       .setTitle(`Commands of ${client.user.username}`)
       .setColor("RANDOM")
       .setDescription(
-        "**Please Select a category to view all its commands**\nCurrently 21 commands are registered to the bot!"
+        "**Please Select a category to view all its commands**\nCurrently 21 commands are registered to the bot!",
       )
       .addFields({
         name: "Some Important Links",
@@ -46,7 +46,7 @@ module.exports = {
         {
           name: "Categories » Fun (3)",
           value: "`/games`, `/meme`, `/saved-memes`",
-        }
+        },
       )
       .setTimestamp()
       .setFooter({
@@ -112,7 +112,7 @@ module.exports = {
         {
           name: "🪵 __Log__",
           value: `Create a log channel for giveaway-logs!\n > **Command: \`/log\`**`,
-        }
+        },
       )
       .setTimestamp()
       .setFooter({
@@ -159,7 +159,7 @@ module.exports = {
           name: "📊 __Stats__",
           value: `Check the bot's physical statistics!\n > **Command: \`/stats\`**`,
           inline: true,
-        }
+        },
       )
       .setTimestamp()
       .setFooter({
@@ -186,7 +186,7 @@ module.exports = {
           name: "📚 __Saved Memes__",
           value: `Shows your saved memes!\n > **Command: \`/saved-memes\`**`,
           inline: true,
-        }
+        },
       )
       .setTimestamp()
       .setFooter({
@@ -219,7 +219,7 @@ module.exports = {
               description: `View all the fun based commands!`,
               emoji: `😂`,
             },
-          ])
+          ]),
       ),
       new MessageActionRow().addComponents(
         new MessageButton()
@@ -231,7 +231,7 @@ module.exports = {
           .setCustomId("home-button")
           .setLabel("Home")
           .setStyle("PRIMARY")
-          .setEmoji("🏠")
+          .setEmoji("🏠"),
       ),
     ];
 
@@ -280,7 +280,7 @@ module.exports = {
         componentType: "BUTTON",
         idle: 50000,
         dispose: true,
-      }
+      },
     );
     buttonCollector.on("collect", (interaction) => {
       if (interaction.customId === "all-commands-button") {

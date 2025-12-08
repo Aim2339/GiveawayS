@@ -21,7 +21,10 @@ module.exports = {
         .setCustomId("next")
         .setStyle("SECONDARY")
         .setEmoji("➡️"),
-      new MessageButton().setCustomId("like").setStyle("SUCCESS").setEmoji("❤️")
+      new MessageButton()
+        .setCustomId("like")
+        .setStyle("SUCCESS")
+        .setEmoji("❤️"),
     );
 
     const message = await interaction.reply({

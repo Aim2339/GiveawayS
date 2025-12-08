@@ -36,7 +36,7 @@ module.exports = {
           new Discord.MessageButton()
             .setCustomId(`rps_scissors`)
             .setLabel("✌️ Scissors")
-            .setStyle("PRIMARY")
+            .setStyle("PRIMARY"),
         ),
       ],
     });

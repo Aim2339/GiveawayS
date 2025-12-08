@@ -16,13 +16,13 @@ module.exports = {
         .setLabel(`Invite Link`)
         .setStyle("LINK")
         .setURL(
-          `https://discord.com/api/oauth2/authorize?client_id=900628889452314674&permissions=8&scope=applications.commands%20bot`
+          `https://discord.com/api/oauth2/authorize?client_id=900628889452314674&permissions=8&scope=applications.commands%20bot`,
         ),
 
       new MessageButton()
         .setLabel(`Vote Link`)
         .setStyle("LINK")
-        .setURL(`https://top.gg/bot/${client.user.id}/vote`)
+        .setURL(`https://top.gg/bot/${client.user.id}/vote`),
     );
     const row2 = new MessageActionRow().addComponents(
       new MessageButton()
@@ -39,7 +39,7 @@ module.exports = {
       new MessageButton()
         .setLabel(`Website Link`)
         .setStyle("LINK")
-        .setURL(`https://aim2339.github.io/Website/`)
+        .setURL(`https://aim2339.github.io/Website/`),
     );
 
     const row3 = new MessageActionRow().addComponents(
@@ -52,7 +52,7 @@ module.exports = {
       new MessageButton()
         .setLabel(`Repository Link`)
         .setStyle("LINK")
-        .setURL(`https://github.com/Aim2339/GiveawayS/`)
+        .setURL(`https://github.com/Aim2339/GiveawayS/`),
     );
 
     interaction.reply({

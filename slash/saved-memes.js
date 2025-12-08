@@ -42,7 +42,7 @@ module.exports = {
       new MessageButton()
         .setCustomId("delete")
         .setStyle("DANGER")
-        .setEmoji("🗑️")
+        .setEmoji("🗑️"),
     );
 
     let currentIndex = 0;

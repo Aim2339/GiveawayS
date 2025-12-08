@@ -9,13 +9,13 @@ module.exports = {
       new MessageButton()
         .setLabel(`Vote for ${client.user.username}`)
         .setStyle("LINK")
-        .setURL(`https://top.gg/bot/${client.user.id}/vote`)
+        .setURL(`https://top.gg/bot/${client.user.id}/vote`),
     );
     let invite = new MessageEmbed()
       .setAuthor({ name: "Vote on Top.gg", iconURL: client.user.avatarURL() })
       .setTitle("Vote Link!")
       .setDescription(
-        `Every vote counts, if you like ${client.user} then help us by voting!\nIf you really love us, then go ahead and post a nice review as well!`
+        `Every vote counts, if you like ${client.user} then help us by voting!\nIf you really love us, then go ahead and post a nice review as well!`,
       )
       .setColor("RANDOM")
       .setTimestamp()

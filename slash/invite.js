@@ -10,8 +10,8 @@ module.exports = {
         .setLabel(`Invite ${client.user.username}`)
         .setStyle("LINK")
         .setURL(
-          `https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=applications.commands%20bot`
-        )
+          `https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=applications.commands%20bot`,
+        ),
     );
     let invite = new MessageEmbed()
 
@@ -21,7 +21,7 @@ module.exports = {
       })
       .setTitle("Invite Link!")
       .setDescription(
-        `Invite ${client.user} to your server & enjoy seamless giveaways with advanced features totally for free!`
+        `Invite ${client.user} to your server & enjoy seamless giveaways with advanced features totally for free!`,
       )
       .setColor("RANDOM")
       .setTimestamp()

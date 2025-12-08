@@ -27,18 +27,18 @@ module.exports = {
     const query = interaction.options.getString("giveaway");
 
     const logChannel = interaction.guild.channels.cache.find(
-      (channel) => channel.name === "giveaway-log"
+      (channel) => channel.name === "giveaway-log",
     );
 
     // fetching the giveaway with message Id or prize
     const giveaway =
       // Search with giveaway prize
       client.giveawaysManager.giveaways.find(
-        (g) => g.prize === query && g.guildId === interaction.guild.id
+        (g) => g.prize === query && g.guildId === interaction.guild.id,
       ) ||
       // Search with giveaway Id
       client.giveawaysManager.giveaways.find(
-        (g) => g.messageId === query && g.guildId === interaction.guild.id
+        (g) => g.messageId === query && g.guildId === interaction.guild.id,
       );
 
     // If no giveaway was found with the corresponding input
@@ -63,11 +63,11 @@ module.exports = {
       .then(() => {
         // Success message
         interaction.reply(
-          `:white_check_mark: **[This Giveaway](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId})** Has Now Ended!`
+          `:white_check_mark: **[This Giveaway](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId})** Has Now Ended!`,
         );
         if (logChannel) {
           logChannel.send(
-            `**Giveaway ended!**\n>>> ${interaction.user.username} ended **[This giveaway](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId})**!`
+            `**Giveaway ended!**\n>>> ${interaction.user.username} ended **[This giveaway](https://discord.com/channels/${giveaway.guildId}/${giveaway.channelId}/${giveaway.messageId})**!`,
           );
         } else {
           return;

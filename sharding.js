@@ -7,7 +7,7 @@ const manager = new ShardingManager("./index.js", { token: config.TOKEN });
 manager
   .spawn()
   .catch((error) =>
-    console.error(colors.red(`[ERROR/SHARD] Shard failed to spawn.`))
+    console.error(colors.red(`[ERROR/SHARD] Shard failed to spawn.`)),
   );
 
 manager.on("shardCreate", (shard) => {
@@ -15,8 +15,8 @@ manager.on("shardCreate", (shard) => {
   shard.on("ready", () => {
     console.log(
       colors.rainbow(
-        `[DEBUG/SHARD] Shard ${shard.id} connected to Discord's Gateway!`
-      )
+        `[DEBUG/SHARD] Shard ${shard.id} connected to Discord's Gateway!`,
+      ),
     );
   });
 });
